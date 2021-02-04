@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './App.css';
 import { connect } from 'react-redux'
 import {getJobs} from './actions/jobs'
+import JobForm from './containers/JobForm'
 
 class App extends Component {
 
@@ -12,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Add Job</h1>
-        
+        <JobForm />
         <hr/>
         <h1>My Jobs</h1>
         <ul>
