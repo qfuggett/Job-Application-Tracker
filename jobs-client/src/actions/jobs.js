@@ -5,7 +5,6 @@ export const getJobs = () => {
         fetch('/jobs')
         .then(res => res.json())
         .then(jobs => dispatch({type: "FETCH_JOBS", payload: jobs}))
-        
     }
 }
 
@@ -20,6 +19,6 @@ export const addJob = job => {
             }
         })
         .then(res => res.json())
-        .then(job => dispatch({type: "JOB_ADDED"}))
+        .then(job => dispatch({type: "JOB_ADDED", payload: job}))
     }
 }

@@ -6,8 +6,12 @@ import JobForm from './containers/JobForm'
 
 class App extends Component {
 
-  render(){
+  componentDidMount(){
+    this.props.getJobs()
+  }
 
+  render(){
+    console.log("Rendering. . .")
     const jobsLis = this.props.jobs.map(jb => <li key={jb.id}>{jb.title} - {jb.applied ? "Applied" : "Did Not Apply"}</li>)
 
     return (
@@ -35,4 +39,4 @@ const mapStateToProps = state => {
 
 //getJobs == mapDispatchToProps
 
-export default connect(mapStateToProps, getJobs)(App);
+export default connect(mapStateToProps, {getJobs})(App);
