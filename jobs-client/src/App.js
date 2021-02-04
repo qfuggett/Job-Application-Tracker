@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './App.css';
 import { connect } from 'react-redux'
+import {getJobs} from './actions/jobs'
 
 class App extends Component {
 
@@ -31,4 +32,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+//getJobs == mapDispatchToProps
+
+export default connect(mapStateToProps, getJobs)(App);
