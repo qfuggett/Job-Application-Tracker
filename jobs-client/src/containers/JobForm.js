@@ -19,9 +19,9 @@ class JobForm extends Component {
         this.setState({...this.state,
 
             job: {...this.state.job,
-                title: event.target.value
+                title: event.target.value,
                 // company: event.target.value,
-                // applied: event.target.value,
+                applied: event.target.value,
                 // interview: event.target.value,
                 // hired: event.target.value
             }
@@ -48,9 +48,13 @@ class JobForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleOnSubmit}>
+                <label>Job Title: 
                 <input type="text" value={this.state.job.title} onChange={this.handleOnChange}/>
+                </label><br/>
+                <label>Applied: 
+                <input type="checkbox" value={this.state.applied} onChange={this.handleOnChange}/>
+                </label>
                 {/* <input type="text" value={this.state.job.company} onChange={this.handleOnChange}/>
-                <input type="checkbox" checked={this.state.applied} onChange={this.handleOnChange}/>
                 <input type="checkbox" checked={this.state.interview} onChange={this.handleOnChange}/>
                 <input type="checkbox" checked={this.state.hired} onChange={this.handleOnChange}/> */}
                 <button type="submit">Add This Job</button>
