@@ -12,7 +12,7 @@ class App extends Component {
 
   render(){
     console.log("Rendering. . .")
-    const jobsLis = this.props.jobs.map(jb => <li key={jb.id}>{jb.title} - {jb.applied ? "Applied" : "Did Not Apply"}</li>)
+    const jobsList = this.props.jobs.map(jb => <li key={jb.id}>{jb.title} - {jb.applied ? "Applied" : "Did Not Apply"}</li>)
 
     return (
       <div className="App">
@@ -21,7 +21,7 @@ class App extends Component {
         <hr/>
         <h1>My Jobs</h1>
         <ul>
-          {this.props.loading? <h4>Loading . . . . . .</h4> : jobsLis}
+          {this.props.loading? <h4>Loading . . . . . .</h4> : jobsList}
         </ul>
       </div>
     );

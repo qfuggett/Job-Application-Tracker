@@ -21,7 +21,7 @@ class JobForm extends Component {
             job: {...this.state.job,
                 title: event.target.value,
                 // company: event.target.value,
-                applied: event.target.value,
+                applied: event.target.checked,
                 // interview: event.target.value,
                 // hired: event.target.value
             }
@@ -52,7 +52,7 @@ class JobForm extends Component {
                 <input type="text" value={this.state.job.title} onChange={this.handleOnChange}/>
                 <br/>
                 <label>Applied: </label>
-                <input type="checkbox" value={this.state.applied} onChange={this.handleOnChange}/>
+                <input type="checkbox" checked={this.state.applied} onChange={this.handleOnChange}/>
                 {/* <input type="text" value={this.state.job.company} onChange={this.handleOnChange}/>
                 <input type="checkbox" checked={this.state.interview} onChange={this.handleOnChange}/>
                 <input type="checkbox" checked={this.state.hired} onChange={this.handleOnChange}/> */}
