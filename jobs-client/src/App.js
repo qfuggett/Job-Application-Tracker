@@ -37,6 +37,6 @@ const mapStateToProps = state => {
   }
 }
 
-//getJobs == mapDispatchToProps
+// getJobs == mapDispatchToProps
 
 export default connect(mapStateToProps, {getJobs})(App);

@@ -48,12 +48,11 @@ class JobForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleOnSubmit}>
-                <label>Job Title: 
+                <label>Job Title: </label>
                 <input type="text" value={this.state.job.title} onChange={this.handleOnChange}/>
-                </label><br/>
-                <label>Applied: 
+                <br/>
+                <label>Applied: </label>
                 <input type="checkbox" value={this.state.applied} onChange={this.handleOnChange}/>
-                </label>
                 {/* <input type="text" value={this.state.job.company} onChange={this.handleOnChange}/>
                 <input type="checkbox" checked={this.state.interview} onChange={this.handleOnChange}/>
                 <input type="checkbox" checked={this.state.hired} onChange={this.handleOnChange}/> */}
