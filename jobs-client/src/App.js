@@ -10,26 +10,18 @@ import TodoList from './components/TodoList'
 
 class App extends Component {
 
-  // componentDidMount(){
-  //   this.props.getJobs()
-  // }
-
   render(){
     console.log("Rendering. . .")
-    // const jobsList = this.props.jobs.map(jb => <li key={jb.id}>{jb.title} - {jb.applied ? "Applied" : "Did Not Apply"}</li>)
 
     return (
       <Router>
         <div>
           <NavBar />
           <Route exact path="/" render={() => <div className='todo-app'><TodoList /></div>} />
-          <Route path='/addjob' render={() => <JobForm />} />
+          <Route path='/addjob' render={() => <div className='job-form-page'><h1>Add a Job: </h1><JobForm /></div>} />
           <Route path='/alljobs' 
             render={() => 
             <div>
-              {/* <ul>
-              {this.props.loading? <h4>Loading . . . . . .</h4> : jobsList}
-            </ul> */}
             <AllJobs />
             </div>} />
         </div>  
@@ -38,7 +30,6 @@ class App extends Component {
   }
 }
 
-//allows you to access state through props
 const mapStateToProps = state => {
   console.log("state testing", state)
   return {
@@ -46,7 +37,5 @@ const mapStateToProps = state => {
     loading: state.jobReducer.loading
   }
 }
-
-// getJobs == mapDispatchToProps
 
 export default connect(mapStateToProps, {getJobs})(App);

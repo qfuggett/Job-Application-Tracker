@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 uuidv4();
 
-//what state looks like upon initialization
 
 const jobReducer =(state= {jobs: [], loading: false}, action) => {
         switch(action.type) {

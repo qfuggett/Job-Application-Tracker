@@ -59,18 +59,18 @@ h1 {
 body {
   background: linear-gradient(
     90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
+    rgb(228, 147, 217) 0%,
+    rgb(211, 168, 212) 100%
   );
 }
 
-.todo-app {
+.todo-app, .job-form-page {
   display: flex;
   flex-direction: column;
   justify-content: start;
   width: 520px;
   min-height: 600px;
-  background: #161a2b;
+  background: #9f3cbd;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
@@ -89,7 +89,7 @@ body {
 .todo-input, .job-input {
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
-  border: 2px solid #5d0cff;
+  border: 2px solid #eceaea;
   outline: none;
   width: 320px;
   background: transparent;
@@ -106,25 +106,17 @@ body {
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
+  background: #976f39;
   color: #fff;
   text-transform: capitalize;
 }
 
 .todo-input.edit {
-  border: 2px solid #149fff;
+  border: 2px solid #ffffff;
 }
 
 .todo-button.edit {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
+  background: #976f39;
   padding: 16px 22px;
 }
 
@@ -142,8 +134,8 @@ body {
   color: #fff;
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    rgb(248, 105, 188) 0%,
+    rgb(248, 112, 237) 100%
   );
 
   padding: 16px;
@@ -154,7 +146,7 @@ body {
 .todo-row:nth-child(4n + 1) {
   background: linear-gradient(
     90deg,
-    rgba(93, 12, 255, 1) 0%,
+    rgb(150, 125, 201) 0%,
     rgba(155, 0, 250, 1) 100%
   );
 }
@@ -162,16 +154,16 @@ body {
 .todo-row:nth-child(4n + 2) {
   background: linear-gradient(
     90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
+    rgb(214, 140, 210) 0%,
+    rgb(129, 0, 250) 100%
   );
 }
 
 .todo-row:nth-child(4n + 3) {
   background: linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
+    rgb(223, 190, 129) 0%,
+    rgb(255, 0, 234) 100%
   );
 }
 
