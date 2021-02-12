@@ -46,4 +46,4 @@ h1 {
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
 }
 
-.nav-menu, .jobs, .home, form{ width: 100%; text-align: center; }
+.nav-menu, .jobs, .home, .todo-list, form{ width: 100%; text-align: center; }

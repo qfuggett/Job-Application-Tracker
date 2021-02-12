@@ -6,7 +6,7 @@ import {getJobs} from './actions/jobs'
 import JobForm from './containers/JobForm'
 import NavBar from './components/NavBar'
 import AllJobs from './components/AllJobs'
-import TodoForm from './components/TodoForm'
+import TodoList from './components/TodoList'
 
 class App extends Component {
 
@@ -22,7 +22,7 @@ class App extends Component {
       <Router>
         <div>
           <NavBar />
-          <Route exact path="/" render={() => <div className='todo-app'>Get this done!<TodoList /></div>} />
+          <Route exact path="/" render={() => <div className='todo-app'><TodoList /></div>} />
           <Route path='/addjob' render={() => <JobForm />} />
           <Route path='/alljobs' 
             render={() => 
