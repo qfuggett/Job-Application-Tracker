@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import './App.css';
 import { connect } from 'react-redux'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getJobs} from './actions/jobs'
 import JobForm from './containers/JobForm'
+import NavBar from './components/NavBar'
 
 class App extends Component {
 
@@ -15,15 +17,20 @@ class App extends Component {
     const jobsList = this.props.jobs.map(jb => <li key={jb.id}>{jb.title} - {jb.applied ? "Applied" : "Did Not Apply"}</li>)
 
     return (
-      <div className="App">
-        <h1>Add Job</h1>
-        <JobForm />
-        <hr/>
-        <h1>My Jobs</h1>
-        <ul>
-          {this.props.loading? <h4>Loading . . . . . .</h4> : jobsList}
-        </ul>
-      </div>
+      <Router>
+        <div>
+          <NavBar />
+          <Route exact path="/" render={() => <div>Things to do: </div>} />
+          <Route path='/addjob' render={() => <JobForm />} />
+          <Route path='/alljobs' 
+            render={() => 
+            <div>
+              <ul>
+              {this.props.loading? <h4>Loading . . . . . .</h4> : jobsList}
+            </ul>
+            </div>} />
+        </div>  
+      </Router>
     );
   }
 }

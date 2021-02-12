@@ -1,3 +1,6 @@
+import uuid from 'uuid';
+
+
 //what state looks like upon initialization
 const jobReducer =(state= {jobs: [], loading: false}, action) => {
         switch(action.type) {
@@ -17,6 +20,7 @@ const jobReducer =(state= {jobs: [], loading: false}, action) => {
             case "ADD_JOB":
                 return {
                     ...state,
+                    id: uuid(),
                     loading: true
                 }
 
@@ -25,6 +29,11 @@ const jobReducer =(state= {jobs: [], loading: false}, action) => {
                     ...state,
                     jobs: [...state.jobs, action.payload],
                     loading: false
+                }
+
+            case "JOB_DELETED":
+                return {
+                    jobs: state.jobs.filter(job => job !== action.payload)
                 }
             default:
                 return state;
