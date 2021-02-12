@@ -33,7 +33,7 @@ const jobReducer =(state= {jobs: [], loading: false}, action) => {
 
             case "JOB_DELETED":
                 return {
-                    jobs: state.jobs.filter(job => job !== action.payload)
+                    jobs: state.jobs.filter(job => job.id !== action.payload)
                 }
             default:
                 return state;
