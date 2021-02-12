@@ -9,7 +9,7 @@ class AllJobs extends Component {
     render(){
 
         const jobsList = this.props.jobs.map(jb => 
-            <li key={jb.id}>{jb.title} - 
+            <li className="jobs" key={jb.id}>{jb.title} - 
             {jb.applied ? "Applied" : "Did Not Apply"} 
             </li>) 
 
