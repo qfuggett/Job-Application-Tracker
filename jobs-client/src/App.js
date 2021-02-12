@@ -5,16 +5,17 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {getJobs} from './actions/jobs'
 import JobForm from './containers/JobForm'
 import NavBar from './components/NavBar'
+import AllJobs from './components/AllJobs'
 
 class App extends Component {
 
-  componentDidMount(){
-    this.props.getJobs()
-  }
+  // componentDidMount(){
+  //   this.props.getJobs()
+  // }
 
   render(){
     console.log("Rendering. . .")
-    const jobsList = this.props.jobs.map(jb => <li key={jb.id}>{jb.title} - {jb.applied ? "Applied" : "Did Not Apply"}</li>)
+    // const jobsList = this.props.jobs.map(jb => <li key={jb.id}>{jb.title} - {jb.applied ? "Applied" : "Did Not Apply"}</li>)
 
     return (
       <Router>
@@ -25,9 +26,10 @@ class App extends Component {
           <Route path='/alljobs' 
             render={() => 
             <div>
-              <ul>
+              {/* <ul>
               {this.props.loading? <h4>Loading . . . . . .</h4> : jobsList}
-            </ul>
+            </ul> */}
+            <AllJobs />
             </div>} />
         </div>  
       </Router>
