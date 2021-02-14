@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import {addJob} from '../actions/jobs'
 import { connect } from 'react-redux'
+import * as actions from "../actions/jobs"
+import { bindActionCreators } from "redux";
 
+//TEST
 class JobForm extends Component {
 
     state={
@@ -19,9 +21,10 @@ class JobForm extends Component {
         this.setState({...this.state,
 
             job: {...this.state.job,
-                title: event.target.value,
+                [event.target.name]: event.target.value
+                // title: event.target.value,
                 // company: event.target.value,
-                applied: event.target.checked,
+                // applied: event.target.checked,
                 // interview: event.target.value,
                 // hired: event.target.value
             }
@@ -63,4 +66,11 @@ class JobForm extends Component {
     }
 }
 
-export default connect(null, { addJob })(JobForm)
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        addJob: actions.addJob,
+        updateJob: actions.updateJob
+    }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(JobForm)
