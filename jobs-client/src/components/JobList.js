@@ -17,15 +17,13 @@ class JobList extends Component {
             <div>
                 {this.props.jobs.map(job => {
                     return (
-                        <table>
-                            <tbody>
-                                <tr key={job.id}>
-                                <td>{job.title} - {job.company}</td>
+                            <ul className="jobs">
+                                <li key={job.id}>
+                                    {job.title} - {job.company}
+                                </li>
                                 {/* <td><button onClick={() => this.handleEdit(jb.id)}>Edit</button></td> */}
-                                <td><button key={job.id} onClick={() => this.props.onDelete(job.id)}>Delete</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                <button key={job.id} onClick={() => this.props.onDelete(job.id)}>Delete</button>
+                            </ul>
                         )
                     })
                 }
