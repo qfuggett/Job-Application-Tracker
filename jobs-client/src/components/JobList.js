@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {getJobs} from '../actions/jobs'
 import * as actions from "../actions/jobs"
 import { bindActionCreators } from "redux";
 

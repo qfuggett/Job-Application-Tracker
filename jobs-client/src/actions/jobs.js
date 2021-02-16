@@ -5,7 +5,7 @@ export const getJobs = () => {
         fetch('http://localhost:3001/jobs')
         // fetch('/jobs')
         .then(res => res.json())
-        .then(jobs => dispatch({type: "FETCH_JOBS", payload: jobs}))
+        .then(jobs => dispatch({type: "GET_JOBS", payload: jobs}))
     }
 }
 
@@ -20,33 +20,34 @@ export const addJob = job => {
             }
         })
         .then(res => res.json())
-        .then(job => dispatch({type: "JOB_ADDED", payload: job}))
+        .then(job => dispatch({type: "ADD_JOB", payload: job}))
     }
 }
 
 export const updateJob = job => {
     return (dispatch) => {
         dispatch({type: "UPDATE_JOB"})
-        fetch('http://localhost:3001/jobs/:id', {
-            method: 'POST',
+        fetch(`http://localhost:3001/jobs/${job.id}`, {
+            method: 'PATCH',
             body: JSON.stringify(job),
             headers:{
                 'Content-Type': 'application/json'
             }
         })
         .then(res => res.json())
-        .then(job => dispatch({type: "JOB_UPDATED", payload: job}))
+        .then(job => dispatch({type: "UPDATE_JOB", payload: job}))
     }
 }
 
-export const deleteJob = id => {
+export const deleteJob = job => {
     return (dispatch) => {
         dispatch({type: "JOB_DELETED"})
-        fetch('http://localhost:3001/job/:id', {
+        fetch(`http://localhost:3001/job/${job.id}`, {
             method: 'DELETE',
-            
+            headers:{
+                'Content-Type': 'application/json'
+            }
         })
-        // .then(res => res.json())
-        // .then(job => dispatch({type: "JOB_DELETED", payload: job}))
+        .then(dispatch({type: 'DELETE_JOB'}))
     }
 }
