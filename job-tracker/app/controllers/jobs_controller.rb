@@ -35,7 +35,7 @@ class JobsController < ApplicationController
 
   # DELETE /jobs/1
   def destroy
-    binding.pry
+    # binding.pry
     @job.destroy
   end
 

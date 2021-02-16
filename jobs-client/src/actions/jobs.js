@@ -41,12 +41,9 @@ export const updateJob = job => {
 
 export const deleteJob = job => {
     return (dispatch) => {
-        dispatch({type: "JOB_DELETED"})
-        fetch(`http://localhost:3001/job/${job.id}`, {
-            method: 'DELETE',
-            headers:{
-                'Content-Type': 'application/json'
-            }
+        dispatch({type: "DELETE_JOB"})
+        fetch(`http://localhost:3001/jobs/${job}`, {
+            method: 'DELETE'
         })
         .then(dispatch({type: 'DELETE_JOB'}))
     }
