@@ -48,8 +48,21 @@ class JobForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleOnSubmit} className='job-form'>
-                <input type="text" placeholder="Title" value={this.state.job.title} onChange={this.handleOnChange} className='job-input'/>
-                <input type="text" placeholder="Company" value={this.state.job.company} onChange={this.handleOnChange} className='job-input'/>
+                <input 
+                type="text" 
+                placeholder="Title" 
+                value={this.state.job.title} 
+                onChange={this.handleOnChange} 
+                className='job-input'
+                />
+
+                <input 
+                type="text" 
+                placeholder="Company" 
+                value={this.state.job.company} 
+                onChange={this.handleOnChange} 
+                className='job-input'
+                />
                 <br/>
                 <select id="job-status" size="3">
                     <option value={this.state.job.applied}>Applied</option>
