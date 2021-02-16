@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as actions from "../actions/jobs"
-import { bindActionCreators } from "redux";
-
-//TEST
+import { addJob } from '../actions/jobs'
 class JobForm extends Component {
 
     state={
@@ -22,11 +19,6 @@ class JobForm extends Component {
 
             job: {...this.state.job,
                 [event.target.name]: event.target.value
-                // title: event.target.value,
-                // company: event.target.value,
-                // applied: event.target.checked,
-                // interview: event.target.value,
-                // hired: event.target.value
             }
         })
     }
@@ -66,11 +58,5 @@ class JobForm extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        addJob: actions.addJob,
-        updateJob: actions.updateJob
-    }, dispatch)
-}
 
-export default connect(null, mapDispatchToProps)(JobForm)
+export default connect(null, {addJob})(JobForm)

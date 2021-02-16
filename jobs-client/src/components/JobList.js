@@ -1,43 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import * as actions from "../actions/jobs"
-import { bindActionCreators } from "redux";
-
-
+import { deleteJob, getJobs } from '../actions/jobs'
+import Job from './Job'
 class JobList extends Component {
 
-    componentDidMount(){this.props.getJobs()}
-
-    handleEdit = (jb) => {
-        this.props.updatejob(jb.id)
+    constructor(props){
+        super(props);
     }
 
-    handleDelete = (jb) => {
-        this.props.deletejob(jb.id)
+    componentDidMount(){
+        this.props.onGet()
     }
 
     render(){
 
-       const jobsList = this.props.jobs.map((jb) => {
-            return <tr key={jb.id}>
-                <td>{jb.title}</td>
-                {/* <td>{jb.bName}</td>
-                <td>{jb.amount}</td> */}
-                <td><button onClick={() => this.handleEdit(jb.id)}>Edit</button></td>
-                <td><button onClick={() => this.handleDelete(jb.id)}>Delete</button></td>
-            </tr>
-        })
-
-        // const jobsList = this.props.jobs.map(jb => 
-        //     <li className="jobs" key={jb.id}>{jb.title} - 
-        //     {jb.applied ? "Applied" : "Did Not Apply"} 
-        //     <td><button onClick={() => this.handleEdit(index)}>Edit</button></td>
-        //     <td><button onClick={() => this.handleDelete(index)}>Delete</button></td>
-        //     </li>) 
-
         return(
             <div>
-                {jobsList}
+                <Job
+                key={jobsList.id}
+                job={job}
+                onDelete={this.props.onDelete}
+                 />
             </div>
             )
     }
@@ -52,11 +35,15 @@ const mapStateToProps = state => {
   }
 
   const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({
-        getJobs: actions.getJobs,
-        updatejob: actions.updateJob,
-        deletejob: actions.deleteJob
-    }, dispatch)
+    return {
+        onGet: () => {
+            dispatch(getJobs());
+        },
+
+        onDelete: (id) => {
+            dispatch(deleteJob(id))
+        }
+    }
 }
 
 
