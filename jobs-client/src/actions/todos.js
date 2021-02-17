@@ -39,12 +39,12 @@ export const updateTodo = todo => {
     }
 }
 
-export const deleteTodo = todo => {
+export const deleteTodo = todoId => {
     return (dispatch) => {
         dispatch({type: "DELETE_TODO"})
-        fetch(`http://localhost:3001/todos/${todo}`, {
+        fetch(`http://localhost:3001/todos/${todoId}`, {
             method: 'DELETE'
         })
-        .then(dispatch({type: 'DELETE_TODO'}))
+        .then(dispatch({type: 'DELETE_TODO', payload: todoId}))
     }
 }

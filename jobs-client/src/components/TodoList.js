@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { deleteTodo, getTodos } from '../actions/todos'
+import { deleteTodo, getTodos, updateTodo } from '../actions/todos'
 import TodoForm from '../containers/TodoForm';
-import Todo from './Todo';
+// import Todo from './Todo';
+import { RiCloseCircleLine } from 'react-icons/ri';
+import { TiEdit } from 'react-icons/ti';
+
+
 class TodoList extends Component {
 
     // constructor(props){
@@ -23,8 +27,12 @@ class TodoList extends Component {
                 {this.props.todos.map(todo => {
                     return (
                       <>
-                      <li>{todo.name}</li>
+                      <li className="todo-row" key={todo.id}>{todo.name}</li>
+                      <div className="icons">
+                      <RiCloseCircleLine onClick={() => this.props.onDelete(todo.id)} className='delete-icon'/>
+                      <TiEdit onClick={() => this.props.onUpdate({ id: todo.id, value: todo.text })} className='edit-icon'/>
                       {/* <Todo /> */}
+                      </div>
                       </>
                         )
                     })
@@ -50,6 +58,10 @@ const mapStateToProps = state => {
 
         onDelete: (id) => {
             dispatch(deleteTodo(id))
+        },
+
+        onUpdate: (id) => {
+            dispatch(updateTodo(id))
         }
     }
 }
