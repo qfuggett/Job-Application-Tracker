@@ -55,13 +55,9 @@ class JobForm extends Component {
                 className='job-input'
                 />
                 <br/>
-                <select id="job-status" size="2" value={this.state.job.value} onChange={this.handleOnChange}>
-                {/* <select id="job-status" size="3"> */}
+                <select id="job-status" size="2" placeholder="status" value={this.state.job.status} onChange={this.handleOnChange}>
                     <option placeholder="applied" value="applied">Applied</option>
                     <option placeholder="interview" value="interviewing">Interviewing</option>
-                    {/* <option placeholder="applied" value={this.state.job.applied}>Applied</option>
-                    <option placeholder="interview" value={this.state.job.interview}>Interviewing</option>
-                    <option placeholder="hired" value={this.state.job.hired}>Hired</option> */}
                 </select>
                 <br />
                 <button type="submit" className='job-button'>Add This Job</button>
