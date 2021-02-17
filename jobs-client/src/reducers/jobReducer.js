@@ -29,7 +29,7 @@ const jobReducer =(state= {jobs: [], loading: false}, action) => {
                 }
 
             case "DELETE_JOB":
-                const keptJobs = state.jobs.filter(job => job.id !== action.id)
+                const keptJobs = state.jobs.filter(job => job.id !== parseInt(action.payload))
                 return {
                     ...state,
                     jobs: keptJobs

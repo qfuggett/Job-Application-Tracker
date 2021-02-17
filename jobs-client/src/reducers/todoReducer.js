@@ -12,6 +12,7 @@ const todoReducer =(state= {todos: []}, action) => {
             }
 
         case "ADD_TODO":
+            debugger
             return {
                 ...state,
                 todos: [...state.todos, action.payload]

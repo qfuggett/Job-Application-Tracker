@@ -18,11 +18,12 @@ class JobForm extends Component {
         this.setState({...this.state,
 
             job: {...this.state.job,
-                title: event.target.value,
-                company: event.target.value,
-                applied: event.target.value,
-                interview: event.target.value,
-                hired: event.target.value
+                // title: event.target.value,
+                // company: event.target.value,
+                // applied: event.target.value,
+                // interview: event.target.value,
+                // hired: event.target.value
+                [event.target.placeholder]: event.target.value
 
             }
         })
@@ -50,7 +51,7 @@ class JobForm extends Component {
             <form onSubmit={this.handleOnSubmit} className='job-form'>
                 <input 
                 type="text" 
-                placeholder="Title" 
+                placeholder="title" 
                 value={this.state.job.title} 
                 onChange={this.handleOnChange} 
                 className='job-input'
@@ -58,16 +59,16 @@ class JobForm extends Component {
 
                 <input 
                 type="text" 
-                placeholder="Company" 
+                placeholder="company" 
                 value={this.state.job.company} 
                 onChange={this.handleOnChange} 
                 className='job-input'
                 />
                 <br/>
                 <select id="job-status" size="3">
-                    <option value={this.state.job.applied}>Applied</option>
-                    <option value={this.state.job.interview}>Interviewing</option>
-                    <option value={this.state.job.hired}>Hired</option>
+                    <option placeholder="applied" value={this.state.job.applied}>Applied</option>
+                    <option placeholder="interview" value={this.state.job.interview}>Interviewing</option>
+                    <option placeholder="hired" value={this.state.job.hired}>Hired</option>
                 </select>
                 <br />
                 <button type="submit" className='job-button'>Add This Job</button>

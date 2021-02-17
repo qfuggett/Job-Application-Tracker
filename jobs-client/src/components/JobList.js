@@ -12,7 +12,6 @@ class JobList extends Component {
     }
 
     render(){
-
         return(
             <div>
                 {this.props.jobs.map(job => {

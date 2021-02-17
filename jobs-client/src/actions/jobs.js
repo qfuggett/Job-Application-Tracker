@@ -11,7 +11,6 @@ export const getJobs = () => {
 
 export const addJob = job => {
     return (dispatch) => {
-        dispatch({type: "ADD_JOB"})
         fetch('http://localhost:3001/jobs', {
             method: 'POST',
             body: JSON.stringify(job),
@@ -39,12 +38,12 @@ export const updateJob = job => {
     }
 }
 
-export const deleteJob = job => {
+export const deleteJob = jobId => {
     return (dispatch) => {
         dispatch({type: "DELETE_JOB"})
-        fetch(`http://localhost:3001/jobs/${job}`, {
+        fetch(`http://localhost:3001/jobs/${jobId}`, {
             method: 'DELETE'
         })
-        .then(dispatch({type: 'DELETE_JOB'}))
+        .then(dispatch({type: 'DELETE_JOB', payload: jobId}))
     }
 }
