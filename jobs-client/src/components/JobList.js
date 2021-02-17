@@ -33,7 +33,7 @@ class JobList extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("state testing", state)
+    console.log("jobs state testing", state)
     return {
       jobs: state.jobReducer.jobs,
       loading: state.jobReducer.loading

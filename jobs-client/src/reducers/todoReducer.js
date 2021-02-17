@@ -1,5 +1,10 @@
 const todoReducer =(state= {todos: []}, action) => {
     switch(action.type) {
+        case "LOADING_TODOS":
+                return {
+                    ...state,
+                }
+
         case "GET_TODOS":
             return {
                 ...state,
