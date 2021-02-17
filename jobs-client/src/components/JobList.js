@@ -14,7 +14,7 @@ class JobList extends Component {
                     return (
                             <ul className="jobs">
                                 <li key={job.id}>
-                                    {job.title} - {job.company} : {jobStatus(job)} 
+                                    {job.title} - {job.company} {jobStatus(job)} 
                                 </li>
                                 {/* <td><button onClick={() => this.handleEdit(jb.id)}>Edit</button></td> */}
                                 <button key={job.id} onClick={() => this.props.onDelete(job.id)}>Delete</button>
@@ -28,10 +28,18 @@ class JobList extends Component {
 }
 
 const jobStatus = job => {
-    job.applied ? <html>Application Submitted</html> : <html>Next Steps -</html>
-    // if (job.applied === true) {
+    // job.status ? <html>Application Submitted</html> : <html>Next Steps -</html>
+    // if (job.status === true) {
     //     <html>APPLIED</html>
     // } 
+    switch(job.status){
+        case "applied":
+            return <html>. . . Submitted Application</html>
+        case "interviewing":
+            return <html>. . . Currently Interviewing</html>
+        default: 
+            return <html>default statement</html>
+    }
     
 }
 

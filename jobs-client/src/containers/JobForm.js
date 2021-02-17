@@ -7,9 +7,7 @@ class JobForm extends Component {
         job: {
             title: "",
             company: "",
-            applied: false,
-            interview: false,
-            hired: false
+            status: ""
         },
         loading: false
     }
@@ -18,13 +16,7 @@ class JobForm extends Component {
         this.setState({...this.state,
 
             job: {...this.state.job,
-                // title: event.target.value,
-                // company: event.target.value,
-                // applied: event.target.value,
-                // interview: event.target.value,
-                // hired: event.target.value
                 [event.target.placeholder]: event.target.value
-
             }
         })
     }
@@ -38,9 +30,7 @@ class JobForm extends Component {
             job: {
                 title: "",
                 company: "",
-                applied: true,
-                interview: false,
-                hired: false
+                status: ""
             },
             loading: false
         })
@@ -65,11 +55,10 @@ class JobForm extends Component {
                 className='job-input'
                 />
                 <br/>
-                <select id="job-status" size="3" value={this.state.job.value} onChange={this.handleOnChange}>
+                <select id="job-status" size="2" value={this.state.job.value} onChange={this.handleOnChange}>
                 {/* <select id="job-status" size="3"> */}
                     <option placeholder="applied" value="applied">Applied</option>
-                    <option placeholder="interview" value="interview">Interviewing</option>
-                    <option placeholder="hired" value="hired">Hired</option>
+                    <option placeholder="interview" value="interviewing">Interviewing</option>
                     {/* <option placeholder="applied" value={this.state.job.applied}>Applied</option>
                     <option placeholder="interview" value={this.state.job.interview}>Interviewing</option>
                     <option placeholder="hired" value={this.state.job.hired}>Hired</option> */}
