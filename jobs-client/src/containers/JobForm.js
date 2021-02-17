@@ -38,7 +38,7 @@ class JobForm extends Component {
             job: {
                 title: "",
                 company: "",
-                applied: false,
+                applied: true,
                 interview: false,
                 hired: false
             },
@@ -65,10 +65,14 @@ class JobForm extends Component {
                 className='job-input'
                 />
                 <br/>
-                <select id="job-status" size="3">
-                    <option placeholder="applied" value={this.state.job.applied}>Applied</option>
+                <select id="job-status" size="3" value={this.state.job.value} onChange={this.handleOnChange}>
+                {/* <select id="job-status" size="3"> */}
+                    <option placeholder="applied" value="applied">Applied</option>
+                    <option placeholder="interview" value="interview">Interviewing</option>
+                    <option placeholder="hired" value="hired">Hired</option>
+                    {/* <option placeholder="applied" value={this.state.job.applied}>Applied</option>
                     <option placeholder="interview" value={this.state.job.interview}>Interviewing</option>
-                    <option placeholder="hired" value={this.state.job.hired}>Hired</option>
+                    <option placeholder="hired" value={this.state.job.hired}>Hired</option> */}
                 </select>
                 <br />
                 <button type="submit" className='job-button'>Add This Job</button>

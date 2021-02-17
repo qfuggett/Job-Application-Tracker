@@ -3,7 +3,6 @@ export const getTodos = () => {
     return (dispatch) => {
         dispatch({type: "LOADING_TODOS"}) //dispatches action through reducer to change loading to true to display "loading...."
         fetch('http://localhost:3001/todos')
-        // fetch('/todos')
         .then(res => res.json())
         .then(todos => dispatch({type: "GET_TODOS", payload: todos}))
     }

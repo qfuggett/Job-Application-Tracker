@@ -18,7 +18,7 @@ const todoReducer =(state= {todos: []}, action) => {
             }
 
         case "UPDATE_TODO":
-            const updates = state.todos.filter(todo => todo.id !== action.payload.id)
+            const updates = state.todos.filter(todo => todo.id !== action.payload)
             return {
                 ...state,
                 todos: [...updates, action.payload]

@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import { deleteJob, getJobs } from '../actions/jobs'
 class JobList extends Component {
 
-    // constructor(props){
-    //     super(props);
-    // }
-
     componentDidMount(){
         this.props.onGet()
     }
@@ -18,7 +14,7 @@ class JobList extends Component {
                     return (
                             <ul className="jobs">
                                 <li key={job.id}>
-                                    {job.title} - {job.company}
+                                    {job.title} - {job.company} : {jobStatus(job)} 
                                 </li>
                                 {/* <td><button onClick={() => this.handleEdit(jb.id)}>Edit</button></td> */}
                                 <button key={job.id} onClick={() => this.props.onDelete(job.id)}>Delete</button>
@@ -29,6 +25,14 @@ class JobList extends Component {
             </div>
             )
     }
+}
+
+const jobStatus = job => {
+    job.applied ? <html>Application Submitted</html> : <html>Next Steps -</html>
+    // if (job.applied === true) {
+    //     <html>APPLIED</html>
+    // } 
+    
 }
 
 const mapStateToProps = state => {

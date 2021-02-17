@@ -2,16 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteTodo, getTodos, updateTodo } from '../actions/todos'
 import TodoForm from '../containers/TodoForm';
-// import Todo from './Todo';
 import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
-
 
 class TodoList extends Component {
-
-    // constructor(props){
-    //     super(props);
-    // }
 
     componentDidMount(){
         this.props.onGet()
@@ -31,8 +24,6 @@ class TodoList extends Component {
                         <li key={todo.id}>{todo.name}</li>
                             <div className="icons">
                                 <RiCloseCircleLine onClick={() => this.props.onDelete(todo.id)} className='delete-icon'/>
-                                {/* <TiEdit onClick={() => this.props.onUpdate({ id: todo.id, name: todo.name })} className='edit-icon'/> */}
-                                {/* <Todo /> */}
                             </div>
                       </div>
                       </>

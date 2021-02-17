@@ -21,10 +21,11 @@ const jobReducer =(state= {jobs: [], loading: false}, action) => {
                 }
 
             case "UPDATE_JOB":
-                const updates = state.jobs.filter(job => job.id !== action.payload.id)
+                // const updates = state.jobs.filter(job => job.id !== action.payload)
                 return {
                     ...state,
-                    jobs: [...updates, action.payload],
+                    // jobs: [...updates, action.payload],
+                    jobs: [...state.jobs.filter(job => job.id !== action.payload.id), action.payload],
                     loading: false
                 }
 
