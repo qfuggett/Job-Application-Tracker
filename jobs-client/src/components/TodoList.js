@@ -27,11 +27,13 @@ class TodoList extends Component {
                 {this.props.todos.map(todo => {
                     return (
                       <>
-                      <li className="todo-row" key={todo.id}>{todo.name}</li>
-                      <div className="icons">
-                      <RiCloseCircleLine onClick={() => this.props.onDelete(todo.id)} className='delete-icon'/>
-                      <TiEdit onClick={() => this.props.onUpdate({ id: todo.id, value: todo.text })} className='edit-icon'/>
-                      {/* <Todo /> */}
+                      <div className="todo-row">
+                        <li key={todo.id}>{todo.name}</li>
+                            <div className="icons">
+                                <RiCloseCircleLine onClick={() => this.props.onDelete(todo.id)} className='delete-icon'/>
+                                {/* <TiEdit onClick={() => this.props.onUpdate({ id: todo.id, name: todo.name })} className='edit-icon'/> */}
+                                {/* <Todo /> */}
+                            </div>
                       </div>
                       </>
                         )

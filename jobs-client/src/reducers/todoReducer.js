@@ -12,7 +12,6 @@ const todoReducer =(state= {todos: []}, action) => {
             }
 
         case "ADD_TODO":
-            debugger
             return {
                 ...state,
                 todos: [...state.todos, action.payload]
@@ -26,7 +25,7 @@ const todoReducer =(state= {todos: []}, action) => {
             }
 
         case "DELETE_TODO":
-            const keptTodos = state.todos.filter(todo => todo.id !== action.id)
+            const keptTodos = state.todos.filter(todo => todo.id !== parseInt(action.payload))
             return {
                 ...state,
                 jobs: keptTodos

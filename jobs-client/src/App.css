@@ -187,6 +187,6 @@ body {
   color: black
 }
 
-ul {
+ul, li {
   list-style-type: none;
 }

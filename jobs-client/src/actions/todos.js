@@ -11,7 +11,6 @@ export const getTodos = () => {
 
 export const addTodo = todo => {
     return (dispatch) => {
-        dispatch({type: "ADD_TODO"})
         fetch('http://localhost:3001/todos', {
             method: 'POST',
             body: JSON.stringify(todo),

@@ -56,7 +56,7 @@ handleOnEdit = event => {
               name='text'
               className='todo-input edit'
             />
-            <button onClick={this.handleOnEdit} className='todo-button edit'>
+            <button onClick={this.handleOnChange} className='todo-button edit'>
               Update
             </button>
           </>
