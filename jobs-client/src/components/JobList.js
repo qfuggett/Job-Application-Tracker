@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteJob, getJobs } from '../actions/jobs'
+import JobStatus from './JobStatus'
 class JobList extends Component {
 
     componentDidMount(){
@@ -14,9 +15,9 @@ class JobList extends Component {
                     return (
                             <ul className="jobs">
                                 <li key={job.id}>
-                                    {job.title} - {job.company} {jobStatus(job)} 
+                                    {job.title} - {job.company} 
+                                    <JobStatus job={job}/> 
                                 </li>
-                                {/* <td><button onClick={() => this.handleEdit(jb.id)}>Edit</button></td> */}
                                 <button key={job.id} onClick={() => this.props.onDelete(job.id)}>Delete</button>
                             </ul>
                         )
@@ -25,22 +26,6 @@ class JobList extends Component {
             </div>
             )
     }
-}
-
-const jobStatus = job => {
-    // job.status ? <html>Application Submitted</html> : <html>Next Steps -</html>
-    // if (job.status === true) {
-    //     <html>APPLIED</html>
-    // } 
-    switch(job.status){
-        case "applied":
-            return <html>. . . Submitted Application</html>
-        case "interviewing":
-            return <html>. . . Currently Interviewing</html>
-        default: 
-            return <html>default statement</html>
-    }
-    
 }
 
 const mapStateToProps = state => {
