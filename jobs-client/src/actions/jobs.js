@@ -10,7 +10,6 @@ export const getJobs = () => {
 
 export const addJob = job => {
     return (dispatch) => {
-        dispatch({type: "ADD_JOB"})
         fetch('http://localhost:3001/jobs', {
             method: 'POST',
             body: JSON.stringify(job),

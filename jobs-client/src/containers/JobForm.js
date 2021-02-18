@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import { addJob } from '../actions/jobs'
 class JobForm extends Component {
 
+    constructor(props){
+        super(props);
+        this.handleOnChange = this.handleOnChange.bind(this);
+      }
+
     state={
         job: {
             title: "",
