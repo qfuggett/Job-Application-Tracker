@@ -3,11 +3,6 @@ import { connect } from 'react-redux'
 import { addJob } from '../actions/jobs'
 class JobForm extends Component {
 
-    constructor(props){
-        super(props);
-        this.handleOnChange = this.handleOnChange.bind(this);
-      }
-
     state={
         job: {
             title: "",
@@ -72,6 +67,12 @@ class JobForm extends Component {
                 {/* <select id="job-status" size="2" placeholder="status" defaultValue={this.state.job.status} onClick={this.handleOnChange}>
                     <option placeholder="status" checked={this.state.job.status="applied"}>Applied</option>
                     <option placeholder="status" checked={this.state.job.status="interviewing"}>Interviewing</option>
+                </select>
+                <br /> */}
+
+                {/* <select id="job-status" size="2" placeholder="status" onClick={this.handleOnChange}>
+                    <option checked={this.state.job.status}>Applied</option>
+                    <option checked={this.state.job.status}>Interviewing</option>
                 </select>
                 <br /> */}
 

@@ -23,7 +23,7 @@ class TodoList extends Component {
                       <div className="todo-row">
                         <li key={todo.id}>{todo.name}</li>
                             <div className="icons">
-                                <RiCloseCircleLine onClick={() => this.props.onDelete(todo.id)} className='delete-icon'/>
+                                <RiCloseCircleLine key={todo.id} onClick={() => this.props.onDelete(todo.id)} className='delete-icon'/>
                             </div>
                       </div>
                       </>
