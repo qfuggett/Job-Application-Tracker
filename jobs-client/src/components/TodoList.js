@@ -39,7 +39,6 @@ const mapStateToProps = state => {
     console.log("todos state testing", state)
     return {
       todos: state.todo.todos
-      // todos: state.todoReducer.todos,
     }
   }
 

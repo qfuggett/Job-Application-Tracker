@@ -10,7 +10,7 @@ class JobList extends Component {
 
     render(){
         return(
-            <div>
+            <>
                 {this.props.jobs.map(job => {
                     return (
                             <ul className="jobs">
@@ -23,7 +23,7 @@ class JobList extends Component {
                         )
                     })
                 }
-            </div>
+            </>
             )
     }
 }
@@ -32,7 +32,6 @@ const mapStateToProps = state => {
     console.log("jobs state testing", state)
     return {
       jobs: state.job.jobs,
-      //jobs: state.jobReducer.jobs
       loading: state.job.loading
     }
   }

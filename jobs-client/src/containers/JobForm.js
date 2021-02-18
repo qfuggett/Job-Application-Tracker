@@ -7,7 +7,7 @@ class JobForm extends Component {
         job: {
             title: "",
             company: "",
-            status: ""
+            status: "applied"
         },
         loading: false
     }
@@ -30,7 +30,7 @@ class JobForm extends Component {
             job: {
                 title: "",
                 company: "",
-                status: ""
+                status: "applied"
             },
             loading: false
         })
