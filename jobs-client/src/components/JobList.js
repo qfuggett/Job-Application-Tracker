@@ -11,10 +11,11 @@ class JobList extends Component {
     render(){
         return(
             <>
-                {this.props.jobs.map(job => {
+            <h1>Jobs Applied To: </h1>
+                {this.props.jobs.map((job, index) => {
                     return (
                             <ul className="jobs">
-                                <li key={job.id}>
+                                <li key={index.uniqueId}>
                                     {job.title} - {job.company} 
                                     <JobStatus job={job}/> 
                                 </li>

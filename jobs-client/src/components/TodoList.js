@@ -14,15 +14,15 @@ class TodoList extends Component {
     render(){
 
         return(
-            <div>
+            <>
               <h1>What's the Plan for Today?</h1>
               <TodoForm />
-                {this.props.todos.map(todo => {
+                {this.props.todos.map((todo, index) => {
                     return (
                       <>
-                      <div className="todo-row">
-                        <li key={todo.id}>{todo.name}</li>
-                            <div className="icons">
+                      <div className="todo-row" key={index.uniqueId}>
+                        <li key={index.uniqueId}>{todo.name}</li>
+                            <div className="icons" key={index.uniqueId}>
                                 <RiCloseCircleLine key={todo.id} onClick={() => this.props.onDelete(todo.id)} className='delete-icon'/>
                             </div>
                       </div>
@@ -30,7 +30,7 @@ class TodoList extends Component {
                         )
                     })
                 }
-            </div>
+            </>
             )
     }
 }
@@ -38,7 +38,8 @@ class TodoList extends Component {
 const mapStateToProps = state => {
     console.log("todos state testing", state)
     return {
-      todos: state.todo.todos
+      todos: state.todo.todos,
+      loading: state.todo.loading
     }
   }
 

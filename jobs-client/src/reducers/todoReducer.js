@@ -1,27 +1,31 @@
-const todoReducer =(state= {todos: []}, action) => {
+const todoReducer =(state= {todos: [], loading: false}, action) => {
     switch(action.type) {
         case "LOADING_TODOS":
                 return {
                     ...state,
+                    loading: true
                 }
 
         case "GET_TODOS":
             return {
                 ...state,
-                todos: action.payload
+                todos: action.payload,
+                loading: false
             }
 
         case "ADD_TODO":
             return {
                 ...state,
-                todos: [...state.todos, action.payload]
+                todos: [...state.todos, action.payload],
+                loading: false
             }
 
         case "UPDATE_TODO":
             const updates = state.todos.filter(todo => todo.id !== action.payload)
             return {
                 ...state,
-                todos: [...updates, action.payload]
+                todos: [...updates, action.payload],
+                loading: false
             }
 
         case "DELETE_TODO":

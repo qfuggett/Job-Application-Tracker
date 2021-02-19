@@ -9,6 +9,7 @@ class TodoForm extends Component {
     todo: {
         name: ""
     },
+    loading: false
 }
 
 handleOnChange = event => {
@@ -29,51 +30,52 @@ handleOnSubmit = event => {
         todo: {
             name: ""
         },
+        loading: false
     })
 }
 
-handleOnEdit = event => {
-  event.preventDefault()
-  const todo = {...this.state.todo}
-  console.log(todo)
-  this.props.updateTodo(todo)
-  this.setState({
-      todo: {
-          name: ""
-      },
-  })
-}
+// handleOnEdit = event => {
+//   event.preventDefault()
+//   const todo = {...this.state.todo}
+//   console.log(todo)
+//   this.props.updateTodo(todo)
+//   this.setState({
+//       todo: {
+//           name: ""
+//       },
+//   })
+// }
 
   render() {
     return (
       <form onSubmit={this.handleOnSubmit} className='todo-form'>
-        {this.props.edit ? (
+        {/* {this.props.edit ? (
           <>
             <input
               placeholder='Update your task . . .'
               value={this.state.todo.name}
               onChange={this.handleOnChange}
-              name='text'
+              name='name'
               className='todo-input edit'
             />
             <button onClick={this.handleOnChange} className='todo-button edit'>
               Update
             </button>
           </>
-        ) : (
+        ) : ( */}
           <>
             <input 
             placeholder='Things to do today . . .' 
             value={this.state.todo.name} 
             onChange={this.handleOnChange} 
-            name='text' 
+            name='name' 
             className='todo-input' 
             />
             <button onClick={this.handleOnSubmit} className='todo-button'>
               Add Task
             </button>
           </>
-        )}
+        {/* )} */}
       </form>
     );
   }

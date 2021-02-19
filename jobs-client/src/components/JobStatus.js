@@ -12,11 +12,11 @@ class JobStatus extends Component {
 const status = job => {
     switch(job.status){
         case "applied":
-            return <html>. . . Submitted Application</html>
+            return <div>. . . Submitted Application</div>
         case "interviewing":
-            return <html>. . . Currently Interviewing</html>
+            return <div>. . . Currently Interviewing</div>
         default: 
-            return <html>. . . default statement</html>
+            return <div>. . . default statement</div>
     }
     
 }
