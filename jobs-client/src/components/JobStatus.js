@@ -16,7 +16,7 @@ const status = job => {
         case "interviewing":
             return <div>. . . Currently Interviewing</div>
         default: 
-            return <div>. . . default statement</div>
+            return <div>Other: {job.status}</div>
     }
     
 }

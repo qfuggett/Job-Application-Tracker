@@ -7,7 +7,7 @@ class JobForm extends Component {
         job: {
             title: "",
             company: "",
-            status: "applied"
+            status: ""
         },
         loading: false
     }
@@ -16,7 +16,7 @@ class JobForm extends Component {
         this.setState({...this.state,
 
             job: {...this.state.job,
-                [event.target.placeholder]: event.target.value
+                [event.target.name]: event.target.value
             }
         })
     }
@@ -30,7 +30,7 @@ class JobForm extends Component {
             job: {
                 title: "",
                 company: "",
-                status: "applied"
+                status: ""
             },
             loading: false
         })
@@ -41,7 +41,8 @@ class JobForm extends Component {
             <form onSubmit={this.handleOnSubmit} className='job-form'>
                 <input 
                 type="text" 
-                placeholder="title" 
+                placeholder="Position Title" 
+                name="title" 
                 value={this.state.job.title} 
                 onChange={this.handleOnChange} 
                 className='job-input'
@@ -49,7 +50,8 @@ class JobForm extends Component {
 
                 <input 
                 type="text" 
-                placeholder="company" 
+                placeholder="Company Name" 
+                name="company" 
                 value={this.state.job.company} 
                 onChange={this.handleOnChange} 
                 className='job-input'
@@ -57,7 +59,8 @@ class JobForm extends Component {
 
                 <input 
                 type="text" 
-                placeholder="status" 
+                placeholder="Status: applied or interviewing" 
+                name="status" 
                 value={this.state.job.status} 
                 onChange={this.handleOnChange} 
                 className='job-input'
