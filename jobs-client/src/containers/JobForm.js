@@ -65,49 +65,9 @@ class JobForm extends Component {
                 onChange={this.handleOnChange} 
                 className='job-input'
                 />
-
                 <br/>
-                {/* <select id="job-status" size="2" placeholder="status" defaultValue={this.state.job.status} onClick={this.handleOnChange}>
-                    <option placeholder="status" checked={this.state.job.status="applied"}>Applied</option>
-                    <option placeholder="status" checked={this.state.job.status="interviewing"}>Interviewing</option>
-                </select>
-                <br /> */}
-
-                {/* <select id="job-status" size="2" placeholder="status" onClick={this.handleOnChange}>
-                    <option checked={this.state.job.status}>Applied</option>
-                    <option checked={this.state.job.status}>Interviewing</option>
-                </select>
-                <br /> */}
-
-                {/* <div className="radio">
-                    <label>
-                    <input
-                        type="radio"
-                        value="applied"
-                        placeholder="applied"
-                        checked={this.state.job.status === "applied"}
-                        onClick={this.handleOnChange}
-                        />
-                        Applied
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                    <input
-                        type="radio"
-                        value="interviewing"
-                        placeholder="applied"
-                        checked={this.state.job.status === "interviewing"}
-                        onClick={this.handleOnChange}
-                        />
-                        Interviewing
-                    </label>
-                </div>
-                <div>
-                    Selected option is : {this.state.job.status}
-                </div> */}
+                
                 <button type="submit" className='job-button'>Add This Job</button>
-
             </form>
         )
     }

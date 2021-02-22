@@ -1,4 +1,4 @@
-const jobReducer =(state= {jobs: [], loading: false}, action) => {
+const jobReducer =(state= {jobs: [], loading: false, text: "", selected: undefined}, action) => {
         switch(action.type) {
             case "LOADING_JOBS":
                 return {
@@ -25,8 +25,10 @@ const jobReducer =(state= {jobs: [], loading: false}, action) => {
                 return {
                     ...state,
                     // jobs: [...updates, action.payload],
-                    jobs: [...state.jobs.filter(job => job.id !== action.payload.id), action.payload],
-                    loading: false
+                    // jobs: [...state.jobs.filter(job => job.id !== action.payload.id), action.payload],
+                    loading: false,
+                    text: state.jobs[action.payload],
+                    selected: action.payload
                 }
 
             case "DELETE_JOB":

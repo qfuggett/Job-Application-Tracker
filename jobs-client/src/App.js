@@ -3,8 +3,8 @@ import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import JobForm from './containers/JobForm'
 import NavBar from './components/NavBar'
-import TodoList from './components/TodoList'
-import JobList from './components/JobList'
+import TodoList from './containers/TodoList'
+import JobList from './containers/JobList'
 
 class App extends Component {
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteJob, getJobs } from '../actions/jobs'
-import JobStatus from './JobStatus'
+import JobStatus from '../components/JobStatus'
+
 class JobList extends Component {
 
     componentDidMount(){
@@ -44,7 +45,7 @@ const mapStateToProps = state => {
         },
 
         onDelete: (id) => {
-            dispatch(deleteJob(id))
+            dispatch(deleteJob(id));
         }
     }
 }

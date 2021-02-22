@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteTodo, getTodos, updateTodo } from '../actions/todos'
-import TodoForm from '../containers/TodoForm';
+import TodoForm from './TodoForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 
 class TodoList extends Component {
