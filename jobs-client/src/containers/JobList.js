@@ -12,6 +12,7 @@ class JobList extends Component {
     render(){
         return(
             <>
+            <br/>
             <h1>Jobs Applied To: </h1>
                 {this.props.jobs.map((job, index) => {
                     return (
