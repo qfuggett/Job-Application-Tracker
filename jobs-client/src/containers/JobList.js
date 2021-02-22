@@ -13,7 +13,7 @@ class JobList extends Component {
         return(
             <>
             <br/>
-            <h1>Jobs Applied To: </h1>
+            <h1>Jobs List: </h1>
                 {this.props.jobs.map((job, index) => {
                     return (
                             <ul className="jobs">

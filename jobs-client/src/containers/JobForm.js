@@ -56,10 +56,10 @@ class JobForm extends Component {
                 onChange={this.handleOnChange} 
                 className='job-input'
                 />
-
+                
                 <input 
                 type="text" 
-                placeholder="Status: applied or interviewing" 
+                placeholder="Enter 'applied', 'interviewing' or personal notes" 
                 name="status" 
                 value={this.state.job.status} 
                 onChange={this.handleOnChange} 

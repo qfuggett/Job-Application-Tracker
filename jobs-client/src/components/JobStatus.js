@@ -15,8 +15,10 @@ const status = job => {
             return <div>. . . Submitted Application</div>
         case "interviewing":
             return <div>. . . Currently Interviewing</div>
+        case "":
+            return <div>. . . Considering Position</div>
         default: 
-            return <div>Other: {job.status}</div>
+            return <div>Notes: {job.status}</div>
     }
     
 }
