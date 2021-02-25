@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addJob } from '../actions/jobs'
+import { Alert } from 'rsuite';
+
 class JobForm extends Component {
 
     state={
@@ -34,6 +36,8 @@ class JobForm extends Component {
             },
             loading: false
         })
+        Alert.success(`Added ${job.title} at ${job.company}!`)
+
     }
 
     render() {

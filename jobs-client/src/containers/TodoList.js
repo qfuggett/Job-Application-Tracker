@@ -11,11 +11,16 @@ class TodoList extends Component {
         console.log("component mounted")
     }
 
-    // componentDidUpdate(prevProps, prevState){
+    // componentDidUpdate(){
     //     console.log("component updated")
-    //     console.log(prevProps, prevState)
+    //     // console.log(prevProps, prevState)
     //     this.props.onGet()
     // }
+
+    shouldComponentUpdate(){
+        console.log("should component update")
+        return true
+    }
     
 
     render(){

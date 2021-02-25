@@ -6,7 +6,8 @@ A Ruby on Rails, React-Redux application that logs daily tasks and jobs applied 
 In a new terminal, `cd jobs-client` to enter the front-end and run `npm install`.
 
 ## Usage
-Open a third terminal and run `npm start`, a new browser will automatically open with the page loaded.
+In the terminal for job-tracker, run `rails s` to start the backend server. 
+In the second terminal and run `npm start`, a new browser will automatically open with the page loaded.
 
 ## Contributing
 Bug reports and pull requests are welcome on Github at https://github.com/qfuggett/redux_project.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
