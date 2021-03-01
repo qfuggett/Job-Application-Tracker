@@ -36,7 +36,9 @@ class JobForm extends Component {
             },
             loading: false
         })
-        Alert.success(`Added ${job.title} at ${job.company}!`)
+        if (job.title === "" || job.company === ""){
+            Alert.success(`You must complete the entire form!`)
+        } else Alert.success(`Added the ${job.title} position at ${job.company}!`)
 
     }
 

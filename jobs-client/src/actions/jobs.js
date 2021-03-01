@@ -1,7 +1,6 @@
 export const getJobs = () => {
-    //async/thunk - thunk dispatches twice
     return (dispatch) => {
-        dispatch({type: "LOADING_JOBS"}) //dispatches action through reducer to change loading to true to display "loading...."
+        dispatch({type: "LOADING_JOBS"}) 
         fetch('http://localhost:3001/jobs')
         .then(res => res.json())
         .then(jobs => dispatch({type: "GET_JOBS", payload: jobs}))

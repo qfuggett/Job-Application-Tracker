@@ -1,7 +1,6 @@
 export const getTodos = () => {
-    //async/thunk - thunk dispatches twice
     return (dispatch) => {
-        dispatch({type: "LOADING_TODOS"}) //dispatches action through reducer to change loading to true to display "loading...."
+        dispatch({type: "LOADING_TODOS"}) 
         fetch('http://localhost:3001/todos')
         .then(res => res.json())
         .then(todos => dispatch({type: "GET_TODOS", payload: todos}))
