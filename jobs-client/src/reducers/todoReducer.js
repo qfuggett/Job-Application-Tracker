@@ -29,10 +29,10 @@ const todoReducer =(state= {todos: [], loading: false}, action) => {
             }
 
         case "DELETE_TODO":
-            const keptTodos = state.todos.filter(todo => todo.id !== parseInt(action.payload))
+            const newTodos = state.todos.filter(todo => todo.id !== parseInt(action.payload))
             return {
                 ...state,
-                jobs: keptTodos
+                jobs: newTodos
             }
         default:
             return state;
