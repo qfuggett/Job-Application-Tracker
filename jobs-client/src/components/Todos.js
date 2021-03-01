@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { RiCloseCircleLine } from 'react-icons/ri';
 
-
 class Todos extends Component {
 
     componentDidMount(){

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteJob, getJobs } from '../actions/jobs'
-import JobStatus from '../components/JobStatus'
+import Jobs from '../components/Jobs'
 
 class JobList extends Component {
 
@@ -12,20 +12,7 @@ class JobList extends Component {
     render(){
         return(
             <>
-            <br/>
-            <h1>Jobs List: </h1>
-                {this.props.jobs.map((job, index) => {
-                    return (
-                            <ul className="jobs">
-                                <li key={index.uniqueId}>
-                                    {job.title} - {job.company} 
-                                    <JobStatus job={job}/> 
-                                </li>
-                                <button key={job.id} onClick={() => this.props.onDelete(job.id)}>Delete</button>
-                            </ul>
-                        )
-                    })
-                }
+            <Jobs jobs={this.props.jobs} onGet={this.props.onGet} onDelete={this.props.onDelete}/>
             </>
             )
     }
