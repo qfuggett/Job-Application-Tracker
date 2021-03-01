@@ -7,8 +7,7 @@ import Todos from '../components/Todos'
 class TodoList extends Component {
 
     render(){
-
-
+ 
         return(
             <>
               <h1>What's the Plan for Today?</h1>

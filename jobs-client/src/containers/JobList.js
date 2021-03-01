@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { deleteJob, getJobs } from '../actions/jobs'
 import Jobs from '../components/Jobs'
+import ClickMe from '../components/ClickMe'
 
 class JobList extends Component {
 
@@ -13,6 +14,8 @@ class JobList extends Component {
         return(
             <>
             <Jobs jobs={this.props.jobs} onGet={this.props.onGet} onDelete={this.props.onDelete}/>
+            <br/>
+            <ClickMe />
             </>
             )
     }

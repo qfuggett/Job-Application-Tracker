@@ -36,7 +36,6 @@ handleOnSubmit = event => {
   render() {
     return (
       <form onSubmit={this.handleOnSubmit} className='todo-form'>
-    
           <>
             <input 
             placeholder='Things to do today . . .' 

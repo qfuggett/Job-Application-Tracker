@@ -14,7 +14,7 @@ class JobForm extends Component {
         loading: false
     }
 
-    handleOnChange = event => {
+    handleOnChange(event) {
         this.setState({...this.state,
 
             job: {...this.state.job,
