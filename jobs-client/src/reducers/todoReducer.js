@@ -32,7 +32,7 @@ const todoReducer =(state= {todos: [], loading: false}, action) => {
             const newTodos = state.todos.filter(todo => todo.id !== parseInt(action.payload))
             return {
                 ...state,
-                jobs: newTodos
+                todos: newTodos
             }
         default:
             return state;
