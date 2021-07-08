@@ -1,5 +1,6 @@
 ## Job Application App
-A Ruby on Rails, React-Redux application that logs daily tasks and jobs applied to.
+A Ruby on Rails, React-Redux application that logs daily tasks and jobs applied to.<br />
+<a href="https://drive.google.com/file/d/14QXutMILysUlWy6JsaFZMTF2u-X1HQnt/view?usp=sharing">Demo</a>
 
 ## Installation
 `cd job-tracker` to enter the backend to `bundle install`, then `rake db:create db:migrate` to set up the database needed. 
